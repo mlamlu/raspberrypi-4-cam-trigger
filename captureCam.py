@@ -26,9 +26,6 @@ gp.output(15, True)
 gp.output(16, True)
 gp.output(21, True)
 gp.output(22, True)
-count = 0
-
-
 
 def captureAll():
     print("Start testing the camera A")
@@ -62,7 +59,6 @@ def captureAll():
 
 
 def capture(cam):
-    global count
     date_today = datetime.now()
     nom_image = date_today.strftime('%d_%m_%Y_%H:%M:%S.%f')
     path_image = raspberry_picture_path + nom_image + '-CAM'+str(cam)+'.jpg'
@@ -71,21 +67,14 @@ def capture(cam):
         print("Photo prise")
         command = "scp "+path_image+" "+login+"@"+host+":"+remote_picture_path
         os.system(command)
-        count+=1
         print("Photo envoye")
     except error:
         print("Error :", error)
 
-def close():
-    print('count', count)
+
+if __name__ == "__main__":
+    main()
+
     gp.output(7, False)
     gp.output(11, False)
     gp.output(12, True)
-    return
-
-# if __name__ == "__main__":
-#     main()
-
-#     gp.output(7, False)
-#     gp.output(11, False)
-#     gp.output(12, True)
