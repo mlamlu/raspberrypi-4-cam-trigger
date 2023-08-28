@@ -21,6 +21,8 @@ class CaptureManager:
             thread = threading.Thread(target=captureAll)
             thread.start()
             print("Thread arduCam démarré")
+            thread.join()
+            print("Thread join")
         else:
             print("Thread de la Fonction B est déjà en cours d'exécution")
 
