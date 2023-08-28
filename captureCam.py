@@ -31,29 +31,29 @@ date_today = datetime.now()
 nom_image = date_today.strftime('%d_%m_%Y_%H:%M:%S')
 
 
-def main():
-    print"Start testing the camera A"
+def captureAll():
+    print("Start testing the camera A")
     i2c = "i2cset -y 1 0x70 0x00 0x04"
     os.system(i2c)
     gp.output(7, False)
     gp.output(11, False)
     gp.output(12, True)
     capture(1)
-    print"Start testing the camera B"
+    print("Start testing the camera B")
     i2c = "i2cset -y 1 0x70 0x00 0x05"
     os.system(i2c)
     gp.output(7, True)
     gp.output(11, False)
     gp.output(12, True)
     capture(2)
-    print"Start testing the camera C"
+    print("Start testing the camera C")
     i2c = "i2cset -y 1 0x70 0x00 0x06"
     os.system(i2c)
     gp.output(7, False)
     gp.output(11, True)
     gp.output(12, False)
     capture(3)
-    print"Start testing the camera D"
+    print("Start testing the camera D")
     i2c = "i2cset -y 1 0x70 0x00 0x07"
     os.system(i2c)
     gp.output(7, True)
