@@ -38,7 +38,6 @@ try:
         pass
 
 except KeyboardInterrupt:
-    close()
     GPIO.cleanup()  # Nettoyage des configurations GPIO en cas d'interruption
 
 
