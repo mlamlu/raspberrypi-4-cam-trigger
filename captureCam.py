@@ -71,10 +71,7 @@ def capture(cam):
     except error:
         print("Error :", error)
 
-
-if __name__ == "__main__":
-    main()
-
+def close():
     gp.output(7, False)
     gp.output(11, False)
     gp.output(12, True)
