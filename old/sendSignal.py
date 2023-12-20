@@ -9,9 +9,9 @@ try:
     while True:
         print("send signal...")
         GPIO.output(PIN_SEND, GPIO.HIGH)  # Envoyer le signal en niveau haut
-        time.sleep(0.2)  # Attendre pendant 0.5 seconde
+        time.sleep(1)  # Attendre pendant 0.5 seconde
         GPIO.output(PIN_SEND, GPIO.LOW)   # Envoyer le signal en niveau bas
-        time.sleep(0.5)  # Attendre pendant 4.5 secondes (total 5 secondes)
+        time.sleep(10)  # Attendre pendant 4.5 secondes (total 5 secondes)
 
 except KeyboardInterrupt:
     GPIO.cleanup()  # Nettoyage des configurations GPIO en cas d'interruption
